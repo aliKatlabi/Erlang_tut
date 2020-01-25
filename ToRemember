@@ -1,0 +1,94 @@
+
+- Bit syntax encloses binary data between << and >>, splits it in readable segments
+  segment is separated by a comma
+  A segment is a sequence of bits of a binary (not necessarily on a byte boundary
+  
+Pixel = <<16#FF06AA:24>> by default it'll split it nto segments of 8 bits
+
+<<250,154,41>>
+
+what if 
+
+Pixels = <<16#FF06AA:24,16#FF0644:24,16#2306AA:24>>
+
+also splits into 8 segments but it have here 9 segments
+
+<<255,6,170,255,6,68,35,6,170>>
+
+selective unpack 
+
+<<R:8, Rest/binary>> = Pixels.
+
+Type kind of binary data used  			
+	integer | float | binary | bytes | bitstring | bits | utf8 | utf16 | utf32
+
+Signedness 		
+	signed | unsigned
+
+Endianness (matters for  integer, utf16, utf32, or float)
+			to specify how the system read binary data 
+			72 saved on 4 bytes can be <<72,0,0,0>> 1207959552
+									or <<0,0,0,72>> 72
+	big | little | native
+	
+	
+Unit			size of segment (written unit:number) 
+
+<<X/unsigned>> = <<-44>> gives 212 while signed will give -44
+
+<<Y:4/little-unit:8>> = <<72,0,0,0>>
+
+- expressions have to be terminated with a period followed by whitespace
+
+- Integers and floating values are pretty much the only types of data Erlang's mathematical operator
+
+- expressing integer in other base 2#101010
+
+- variables can't be variable in functional programming 
+		(cannot be binded again unless it is the same value)
+
+- whatever variable : '_' is always unbounded (they will not store a value)
+
+- atoms : it get value same as its name
+
+- syntax : variable starts with capital letter 
+		  atoms start with small letter OR it should be enclosed in (') if not
+		  
+- atoms table csonumes 4bytes/atom or (8bytes/atom 64-bit sys) 
+		the atom table is not garbage collected , SO it better not be generated dynamically
+
+- comparing numbers in Erlang is impotant 
+			=/= (not equal in value an type(integer, float))
+			=:= (equal in v & t)
+			==	(equal in v)
+			flase , true (are atoms) will not (be equal) to any number 
+			anynumber < false(or true) (gives true)
+			ordering of types is like this:
+			number < atom < reference < fun < port < pid < tuple < list < bit string
+ 
+- tuple  {e1,e2}  e can be any type 
+
+- {X,Y} = {1,2} pattern matching to unpack the tuple (work only if the # of elements is the same)
+
+- list [e1, e2, e2, ...] e can be any type
+
+	list ++ list , list -- list 
+
+- [Head|Tail] pattern matching to slice the list into a head(element) and tail(list)
+
+  [H|T] = [1,2,3,4]. (H equals to 1) (T equals to [2,3,4])
+  
+  '|' is called constructor 
+ 
+- this form [H|T] is called improper list , cannot be used say. as an argument
+
+- list comprehensions
+	[2*N || N<-[1,2,3,4]] , X > 3 ].	[x || x<-list, condition on x].
+
+
+
+
+
+
+
+

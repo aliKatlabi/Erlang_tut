@@ -1,0 +1,56 @@
+b()
+Prints the current variable bindings.
+
+f()
+Removes all variable bindings.
+
+f(X)
+Removes the binding of variable X.
+
+
+..
+rr(Module)		//rr(WildcardOrModule, RecordNames)   //  rr(Wildcard)
+
+it makes the shell familiar with module's records 
+
+Reads record definitions from a module's BEAM file. 
+If there are no record definitions in the BEAM file, 
+the source file is located and read instead.
+Returns the names of the record definitions read. Module is an atom.
+
+......
+
+rd(RecordName, RecordDefinition)
+Defines a record in the shell.
+
+RecordName is an atom and RecordDefinition lists the field names and the default values.
+Usually record definitions are made known to the shell by use of the rr/1,2,3 commands described below,
+but sometimes it is handy to define records on the fly.
+
+
+rl() 	  /// rf(RecordNames)
+PRINT all record definitions.
+
+
+rf()      ///  rf(RecordNames)
+REMoVE all record definitions, then reads record definitions from
+the modules shell_default and user_default (if loaded). 
+Returns the names of the records defined.
+
+
+rp(Term) lets you convert a tuple to a record (given the definition exists)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

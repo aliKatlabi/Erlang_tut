@@ -1,0 +1,10 @@
+
+
+
+
+%  Compiling 
+
+%using 
+% $ erlc flags file.erl  in command line
+% compile:file(file.erl)  inside the module OR in shell [will appear after compiling with c()]
+% c(file)  in shell only

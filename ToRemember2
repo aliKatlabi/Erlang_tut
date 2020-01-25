@@ -1,0 +1,4 @@
+
+- in Erlang, everything has to return something, and if expressions are no exception to the rule
+
+- in (if end Guards) , True means Else .
